@@ -1,0 +1,407 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #fd6f00;
+  --color-secodary: #000000;
+  --color-btn-blur: #fd8c33;
+}
+
+html,
+body {
+  font-family: "Nunito", sans-serif;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/image/Background-porto.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+/* Navbar and Logo */
+.navbar {
+  padding: 5px;
+  width: 100%;
+  z-index: 10;
+}
+
+.logo {
+  transform: translateY(-50px); /* Posisi awal di atas posisi normal */
+  transition: transform 0.5s ease; /* Transisi meluncur yang lambat */
+}
+
+.logo.show {
+  transform: translateY(0); /* Pindahkan ke posisi normal */
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 100px;
+  position: sticky;
+}
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.bar1 {
+  width: 35px;
+  height: 4px;
+  background-color: #333;
+  margin: 0;
+  transition: 0.4s;
+}
+
+.bar2 {
+  width: 35px;
+  height: 4px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.bar3 {
+  width: 35px;
+  height: 4px;
+  background-color: #333;
+  margin: 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  transform: translate(0, 10px) rotate(-45deg);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  transform: translate(0, -10px) rotate(45deg);
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 3em;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a.active {
+  color: var(--color-primary);
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+}
+
+.nav-links a {
+  font-weight: 400;
+  font-size: 1.3rem;
+  padding: 8px;
+  text-decoration: none;
+  color: var(--color-secodary);
+  position: relative;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: var(--color-primary);
+}
+
+/* Content */
+.contact-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 100px;
+}
+
+.contact-title {
+  font-size: 1.8rem;
+  margin: 10px 0 10px 0;
+  position: relative;
+}
+
+.contact-title::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40px;
+  width: 130px;
+  height: 3px;
+  background-color: var(--color-primary);
+  display: flex;
+  margin-right: 15px;
+}
+
+.description {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.contact-sosmed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 70%;
+  gap: 50px;
+}
+
+.image-cover {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-secodary);
+  flex-direction: row;
+  width: 250px;
+  height: 80px;
+  border-radius: 10px;
+}
+
+.image-cover::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.image-cover:hover::before {
+  transform: translate(10px, 5px);
+}
+
+.image-icon {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  border: 3px solid var(--color-secodary);
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  padding: 15px 20px 15px 20px;
+  background-color: var(--color-primary);
+  text-decoration: none;
+}
+
+.description-icon {
+  display: flex;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+/* Footer */
+.footer-down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #545454;
+  padding: 10px;
+}
+
+.description-footer {
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-align: center;
+  color: white;
+}
+
+.description-footer span {
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+/* Navlinks Responsive */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .hamburger-menu {
+    display: inline-block;
+    margin-left: auto;
+  }
+
+  .nav-links {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    text-align: center;
+    flex-direction: column;
+    background-color: #5151517e;
+    position: absolute;
+    top: 83px;
+    right: 0;
+    width: 100%;
+    transition: max-height 0.5s ease-in-out;
+  }
+
+  li,
+  a {
+    padding: 15px 22px;
+  }
+
+  .nav-links li:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+  }
+
+  .nav-links.show {
+    max-height: 300px;
+  }
+
+  .container {
+    margin: 0 20px;
+  }
+
+  /* .icon-bag {
+      top: 20px;
+    } */
+}
+
+/* Profile dan Media sosial*/
+@media (max-width: 768px) {
+  .content-home {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;
+    gap: 20px;
+    height: auto;
+  }
+
+  .text-home {
+    width: 100%;
+    text-align: center;
+  }
+
+  .text1 {
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .btn {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .profile {
+    width: 100%;
+  }
+
+  .profile img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .social-media {
+    display: flex;
+    gap: 0;
+  }
+
+  .social-media img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+}
