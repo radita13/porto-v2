@@ -5,6 +5,14 @@ function toggleMobileMenu(e) {
     navLinks.classList.toggle("show")
 }
 
+// Splash Screen
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        document.getElementById("splash-screen").style.display = "none";
+        document.querySelector(".content-home").style.display = "flex"; 
+    }, 2000);
+});
+
 // Navbar active
 document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll("section");
@@ -79,6 +87,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// Typing Effect
+const textArray = ["Frontend Developer", "UI/UX Designer"];
+let textIndex = 0;
+let charIndex = 0;
+const typingSpeed = 100;
+const eraseSpeed = 50;
+const pauseTime = 1500;
+
+function type() {
+    if (charIndex < textArray[textIndex].length) {
+        document.getElementById("typed-text").textContent += textArray[textIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingSpeed);
+    } else {
+        setTimeout(erase, pauseTime);
+    }
+}
+
+function erase() {
+    if (charIndex > 0) {
+        document.getElementById("typed-text").textContent = textArray[textIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, eraseSpeed);
+    } else {
+        textIndex = (textIndex + 1) % textArray.length;
+        setTimeout(type, typingSpeed + 1000);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    type();
+});
 
 // Modal Services
 document.addEventListener("DOMContentLoaded", function () {

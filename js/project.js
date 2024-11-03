@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
 // Go Back
 document.addEventListener("DOMContentLoaded", function () {
     const backArrow = document.querySelector(".back");

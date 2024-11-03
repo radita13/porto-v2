@@ -41,6 +41,75 @@ body::before {
   z-index: -1;
 }
 
+/* Splash Screen */
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.loader p {
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 20px;
+}
+
+.dot-animation {
+  display: inline-block;
+}
+
+.dot-animation::after {
+  content: '';
+  display: inline-block;
+  animation: dots 1.5s steps(4, end) infinite;
+}
+
+.progres {
+  width: 200px;
+  height: 20px;
+  background:
+  linear-gradient(#000 0 0) 0/0% no-repeat#ddd;
+  animation: l1 2s infinite linear;
+}
+
+@keyframes l1 {
+    100% {background-size:100%}
+}
+
+@keyframes dots {
+  0%, 20% {
+      content: '';
+  }
+  40% {
+      content: '.';
+  }
+  60% {
+      content: '..';
+  }
+  80%, 100% {
+      content: '...';
+  }
+}
+
+.contact-container {
+  display: none;
+}
+
 /* Navbar and Logo */
 .navbar {
   padding: 5px;
@@ -49,12 +118,12 @@ body::before {
 }
 
 .logo {
-  transform: translateY(-50px); /* Posisi awal di atas posisi normal */
-  transition: transform 0.5s ease; /* Transisi meluncur yang lambat */
+  transform: translateY(-50px);
+  transition: transform 0.5s ease; 
 }
 
 .logo.show {
-  transform: translateY(0); /* Pindahkan ke posisi normal */
+  transform: translateY(0);
 }
 
 .container {
@@ -197,7 +266,7 @@ body::before {
   font-weight: 400;
   margin-top: 10px;
   margin-bottom: 20px;
-  text-align: justify;
+  text-align: center;
 }
 
 .contact-sosmed {
@@ -331,10 +400,6 @@ body::before {
   .container {
     margin: 0 20px;
   }
-
-  /* .icon-bag {
-      top: 20px;
-    } */
 }
 
 /* Profile dan Media sosial*/

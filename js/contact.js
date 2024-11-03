@@ -1,3 +1,11 @@
+// Splash Screen
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        document.getElementById("splash-screen").style.display = "none";
+        document.querySelector(".contact-container").style.display = "flex"; 
+    }, 2000);
+});
+
 // Navbar active
 document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll("section");

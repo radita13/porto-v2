@@ -13,6 +13,16 @@
 </head>
 
 <body>
+<!-- Splash Screen -->
+<div id="splash-screen">
+    <div class="loader">
+        <p>Loading<span class="dot-animation"></span></p>
+        <div class="progres"></div>
+    </div>
+</div>
+<!-- End Splash Screen -->
+
+<!-- Navbar -->
     <nav class="navbar hidden">
         <div class="container">
             <div class="logo">Portofolio.</div>
@@ -29,13 +39,16 @@
             </ul>
         </div>
     </nav>
+    <!-- End Navbar -->
 
     <!-- Home -->
     <section id="home-section" class="content-home">
         <div class="text-home">
             <p class="text1">Hi, It’s me</p>
             <h2>I Komang Radita Suardhana</h2>
-            <h1>And I’m <span>Frontend Developer</span><br>& <span>UI/UX Designer</span></h1>
+            <h1> And I’m <span class="typing" id="typed-text"></span>
+                <span class="cursor">|</span>
+            </h1>
             <p class="description">I am a Frontend Web Developer and UI/UX Designer based in Indonesia. I strive to
                 build immersive and beautiful websites through carefully crafted code and user-centred design.</p>
             <div class="cover-btn">
@@ -53,6 +66,7 @@
             </div>
         </div>
     </section>
+    <!-- End Home -->
 
     <!-- About -->
     <section id="about-section">
@@ -90,8 +104,9 @@
             </div>
         </div>
     </section>
+    <!-- End About -->
 
-    <!-- Experince -->
+    <!-- My Experince -->
     <section id="experience">
         <h4 class="header-experince">My Experince</h4>
         <div class="timeline">
@@ -143,8 +158,9 @@
             </div>
         </div>
     </section>
+    <!-- End Experince -->
 
-    <!-- Skills -->
+    <!-- My Skills -->
     <section id="skills-section" class="skills-sec">
         <div class="cover-skills">
             <div class="skills">
@@ -203,6 +219,7 @@
             </div>
         </div>
     </section>
+    <!-- End Skills -->
 
     <!-- Project -->
     <section id="project">
@@ -318,6 +335,7 @@
             </div>
         </div>
     </section>
+    <!-- End Project -->
 
     <!-- Services -->
     <section id="services">
@@ -370,29 +388,17 @@
                 </div>
             </div>
         </div>
+        <div id="myModal" class="modalServices">
+            <div class="cover-services">
+                <div class="modal-content-services">
+                    <span class="close">&times;</span>
+                    <h2>Project Details</h2>
+                    <p>Some text in the Modal..</p>
+                </div>
+            </div>
+            </div>
     </section>
-
-    <!-- Modal Servives -->
-    <div id="myModal" class="modalServices">
-        <div class="cover-services">
-            <div class="modal-content-services">
-                <span class="close">&times;</span>
-                <h2>Project Details</h2>
-                <p>Some text in the Modal..</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- <div id="myModal-project" class="modalProject">
-        <div class="cover-services">
-            <div class="modal-content-project">
-                <span class="close">&times;</span>
-                <p>Some text in the Modal..</p>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- End Modal Services -->
+    <!-- End Services -->
 
     <!-- My Contact -->
     <footer>
@@ -416,6 +422,7 @@
             <p class="description-footer">© 2024 <span>I Komang Radita Suardhana.</span> All rights reserved.</p>
         </div>
     </footer>
+    <!-- End Contact -->
 
     <script src="js/main.js"></script>
 </body>
