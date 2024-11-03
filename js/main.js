@@ -113,11 +113,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggleButtonsView = document.querySelectorAll(".view-button");
     const spanProject = document.getElementsByClassName("close-project")[0];
 
-    function showModalProject(projectName, projectDescription) {
+    function showModalProject(projectName, projectBadge, projectDescription) {
         modalProject.style.display = "block";
         document.querySelector(".modal-content-project h2").innerText = projectName;
         document.querySelector(".modal-content-project p").innerText = projectDescription;
-    }
+        const badgeContainer = document.querySelector(".modal-content-project .badge-container")
+        badgeContainer.innerText = "";
+
+        projectBadge.forEach((badge) => {
+            const badgeElement = document.createElement("span")
+            badgeElement.classList.add("badge")
+            badgeElement.innerText = badge
+            badgeElement.style.display = "inline-block"
+            badgeContainer.appendChild(badgeElement)
+        })
+    }    
 
     spanProject.onclick = function () {
         modalProject.style.display = "none";
@@ -128,7 +138,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const projectContent = this.closest(".cover-project")
             const projectTitle = projectContent.querySelector(".project-name").innerText;
             const projectDescription = projectContent.querySelector(".project-description").innerText;
-            showModalProject(projectTitle, projectDescription)
+            const projectBadge = Array.from(projectContent.querySelectorAll(".badge")).map(badge => badge.innerText)
+            showModalProject(projectTitle, projectBadge, projectDescription)
         };
 
     });

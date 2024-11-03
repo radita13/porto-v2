@@ -203,7 +203,7 @@ body::before {
   margin-right: 15px;
 }
 
-h2 {
+.text-home h2 {
   font-size: 1.875rem;
   font-weight: 700;
   margin-bottom: 10px;
@@ -723,6 +723,24 @@ h1 span {
 
 .card-project:hover {
   transform: scale(1.05);
+}
+
+.badge {
+  display: none;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: red;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+.title-project {
+  display: flex;
+  gap: 10px;
+  margin: 0 0 10px 0;
 }
 
 .image-project {
