@@ -13,11 +13,33 @@
 </head>
 
 <body>
-    <!-- Back -->
-    <div class="back">
-        <a href="index.html"><img src="assets/icon/back-button.png" alt="Back"></a>
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div class="loader">
+            <p>Loading<span class="dot-animation"></span></p>
+            <div class="progres"></div>
+        </div>
     </div>
-    <!-- End Back -->
+    <!-- End Splash Screen -->
+
+    <!-- Navbar -->
+    <nav class="navbar hidden">
+        <div class="container">
+            <div class="logo">Portofolio.</div>
+            <div class="hamburger-menu" onclick="toggleMobileMenu(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a id="home" href="index.html">Home</a></li>
+                <li><a id="about" href="about.html">About</a></li>
+                <li><a id="skills" href="project.html">Project</a></li>
+                <li><a id="contact" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- End Navbar -->
 
     <!-- Project -->
     <section id="project">
@@ -28,7 +50,7 @@
                     <div class="title-project">
                         <h2>Project Details</h2>
                         <div class="badge-container"></div>
-                        </div>
+                    </div>
                     <p></p>
                 </div>
             </div>
@@ -41,7 +63,8 @@
                         <div class="image-project">
                             <img class="image-project-head" src="assets/image/Project/Project_1.jpg" alt="">
                             <div class="overlay">
-                                <a href="https://github.com/radita13/FP_PW_sepatu-lokal" target="_blank" class="github-icon">
+                                <a href="https://github.com/radita13/FP_PW_sepatu-lokal" target="_blank"
+                                    class="github-icon">
                                     <img src="assets/icon/github-icon-card.png" alt="GitHub">
                                 </a>
                                 <div class="cover-view">
@@ -68,7 +91,8 @@
                         <div class="image-project up-image">
                             <img class="image-project-head2" src="assets/image/Project/Project_2.jpg" alt="">
                             <div class="overlay">
-                                <a href="https://github.com/radita13/reactjs-pokemonapi" target="_blank" class="github-icon">
+                                <a href="https://github.com/radita13/reactjs-pokemonapi" target="_blank"
+                                    class="github-icon">
                                     <img src="assets/icon/github-icon-card.png" alt="GitHub">
                                 </a>
                                 <div class="cover-view">
@@ -130,7 +154,8 @@
                         <div class="image-project">
                             <img class="image-project-head" src="assets/image/Project/Project_1.jpg" alt="">
                             <div class="overlay">
-                                <a href="https://github.com/radita13/reactjs-pokemonapi" target="_blank" class="github-icon">
+                                <a href="https://github.com/radita13/reactjs-pokemonapi" target="_blank"
+                                    class="github-icon">
                                     <img src="assets/icon/github-icon-card.png" alt="GitHub">
                                 </a>
                                 <div class="cover-view">
@@ -300,7 +325,7 @@
     <div class="police-line-background">
         <div class="project-coming">
         </div>
-    </div> 
+    </div>
 
     <script src="js/project.js"></script>
 </body>

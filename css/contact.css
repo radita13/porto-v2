@@ -239,7 +239,7 @@ body::before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px 100px;
+  margin: 50px 100px;
 }
 
 .contact-title {
@@ -261,13 +261,13 @@ body::before {
   margin-right: 15px;
 }
 
-.description {
+/* .description {
   font-size: 1.2rem;
   font-weight: 400;
   margin-top: 10px;
   margin-bottom: 20px;
   text-align: center;
-}
+} */
 
 .contact-sosmed {
   display: flex;
@@ -276,6 +276,7 @@ body::before {
   flex-wrap: wrap;
   width: 70%;
   gap: 50px;
+  margin-top: 25px;
 }
 
 .image-cover {
